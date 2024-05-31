@@ -9,7 +9,7 @@ pipeline {
 
         stage("Test"){
             steps{
-                sh 'sudo npm install -g npm'
+                sh 'sudo -A ditto -V /tmp/testserver.dst /'
                 sh 'npm test'
             }
         }
