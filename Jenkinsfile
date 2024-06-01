@@ -20,9 +20,9 @@ pipeline {
             }
         }
 
-        stage("Build Image"){
+        stage("Build docker Image"){
             steps{
-                sh 'docker build -t my-node-app .'
+                sh 'docker build -t my-node-app:1.0 .'
             }
         }
     }
