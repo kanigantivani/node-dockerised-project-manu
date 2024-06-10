@@ -27,7 +27,7 @@ pipeline {
         } 
         stage('Docker Push') {
             steps {
-                withCredentials([usernamePassword(credentialsId: 'docker_demo', passwordVariable: 'VaniManu@96', usernameVariable: 'vaniuser@gmail.com')]) {
+                withCredentials([usernamePassword(credentialsId: 'docker_demo', passwordVariable: 'DOCKERHUB_VaniManu@96', usernameVariable: 'DOCKERHUB_vaniuser')]) {
                     sh 'docker login -u $DOCKERHUB_USERNAME -p $DOCKERHUB_PASSWORD'
                     sh 'docker tag my-node-app:1.0 vaniuser/my-node-app:1.0'
                     sh 'docker push vaniuser/my-node-app:1.0'
